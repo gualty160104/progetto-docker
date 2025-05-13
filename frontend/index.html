@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello Frontend</title>
+</head>
+<body>
+  <h1 id="output">Caricamento...</h1>
+  <script>
+    fetch('/api')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('output').innerText = data.message;
+      })
+      .catch(err => {
+        document.getElementById('output').innerText = 'Errore: ' + err;
+      });
+  </script>
+</body>
+</html>
